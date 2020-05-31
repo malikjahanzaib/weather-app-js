@@ -1,4 +1,4 @@
-# weather-app-js
+# Weather App
 >This is a sweet and simple weather app which retrieves weather conditions like temperature, hi/low & weather of any city.
 ## Run
 ```
