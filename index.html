@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-wrap">
+      <header>
+        <input
+          type="text"
+          autocomplete="off"
+          class="search-box"
+          placeholder="Search for a city..."
+        />
+      </header>
+      <main>
+        <label class="switch">
+          <input type="checkbox" id="toggler" />
+          <span class="slider round"></span>
+        </label>
+        <section class="location">
+          <div id="icon"><img id="wicon" src="" alt="No Internet" /></div>
+          <div class="city"></div>
+          <div class="date"></div>
+        </section>
+        <div class="current">
+          <div class="temp"></div>
+          <div class="weather"></div>
+          <div class="hi-low"></div>
+        </div>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
