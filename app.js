@@ -6,7 +6,7 @@ const api = {
 let toggler = document.querySelector("#toggler");
 
 const defaultCityValue = "Srinagar";
-document.onload = defaultCity(defaultCityValue);
+document.onload = paint(defaultCityValue);
 
 const searchBox = document.querySelector(".search-box");
 searchBox.addEventListener("keypress", setQuery);
@@ -63,6 +63,7 @@ function displayResults(weather) {
   )}<span>${tempUnit}</span>/${Math.round(
     weather.main.temp_max
   )}<span>${tempUnit}</span>`;
+  store(city.innerText);
 }
 
 function dateBuilder(now) {
@@ -96,8 +97,16 @@ function dateBuilder(now) {
   return `${day}, ${date} ${month} ${year}`;
 }
 
-function defaultCity(city) {
-  getResults(city);
+function store(location) {
+  localStorage.setItem("location", location);
+}
+
+function paint(defcity) {
+  if (localStorage.getItem("location") === null) {
+    getResults(defcity);
+  } else {
+    getResults(localStorage.getItem("location"));
+  }
 }
 
 toggler.addEventListener("change", convertCurrent);
